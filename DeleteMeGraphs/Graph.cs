@@ -61,17 +61,21 @@ namespace Graphs
             {
                 return false;
             }
-            Vertices[Vertices.IndexOf(a)].Neighbors.Add(b);
-            Vertices[Vertices.IndexOf(b)].Neighbors.Add(a);
+
+            a.Neighbors.Add(b);
+            b.Neighbors.Add(a);
+
+            //Vertices[Vertices.IndexOf(a)].Neighbors.Add(b);
+            //Vertices[Vertices.IndexOf(b)].Neighbors.Add(a);
             return true;
 
         }
-        public void AddEdge(T a, T b)
+        public bool AddEdge(T a, T b)
         {
             Vertex<T> A = Search(a);
             Vertex<T> B = Search(b);
 
-            AddEdge(A, B);
+            return AddEdge(A, B);
         }
         public bool RemoveEdge(Vertex<T> a, Vertex<T> b) //helper function
         {
@@ -152,6 +156,16 @@ namespace Graphs
 
             return new List<T>();
         }
+
+        public List<T> BFSShortestPathByHops(T start, T end)
+        {
+            Queue<Vertex<T>> queue = new Queue<Vertex<T>>();
+            bool[] hasVisited = new bool[];
+
+            return new List<T>();
+        }
+
+
         public List<T> BFSPath(T start, T end)
         {
             //bool[] cycle = new bool[Vertices.Count];
