@@ -160,9 +160,70 @@ namespace Graphs
         public List<T> BFSShortestPathByHops(T start, T end)
         {
             Queue<Vertex<T>> queue = new Queue<Vertex<T>>();
-            bool[] hasVisited = new bool[];
+            List<T> path = new List<T>();
+            Dictionary<Vertex<T>, Vertex<T>> dict = new Dictionary<Vertex<T>, Vertex<T>>();
+            //foreach (var vertex in Vertices)
+            //{
+            //    dict[vertex] = null;
+            //}
+            Vertices.ForEach(vertex => vertex.hasVisited = false);
 
-            return new List<T>();
+            var startNode = Search(start);
+            if (startNode is null) return path;
+            var endNode = Search(end);
+            if (endNode is null) return path;
+
+            dict[startNode] = null;
+            queue.Enqueue(startNode);
+            var prev = startNode;
+
+            while (queue.Count > 0)
+            {
+                var current = queue.Dequeue();
+
+
+                current.hasVisited = true;
+                //path.Add(current.Value);
+                for (int i = 0; i < current.Neighbors.Count; i++)
+                {
+                    if (!current.Neighbors[i].hasVisited)
+                    {
+                        current.Neighbors[i].hasVisited = true;
+                        queue.Enqueue(current.Neighbors[i]);
+                        dict[current.Neighbors[i]] = current;
+
+                    }
+                    //else if (queue.Contains(current)) break;
+
+                    //prev = current;
+                }
+
+            }
+
+            var pathStart = endNode;
+
+            while(pathStart != null)
+            {
+                path.Add(pathStart.Value);
+                pathStart = dict[pathStart];
+                
+            }
+            if (path.Contains(endNode.Value)) return path;
+            else return new List<T>();
+            //for (int i = 0; i < dict.Count; i++)
+            //{
+            //    var value = dict[current];
+            //    if (value is null)
+            //    {
+            //        return path;
+            //    }
+            //    else
+            //    {
+            //        path.Add(value.Value);
+            //    }
+            //}
+
+           
         }
 
 
@@ -180,35 +241,35 @@ namespace Graphs
 
             //for (int i = 0; i < cycle.Length; i++)
             //{
-                queue.Enqueue(startNode);
+            queue.Enqueue(startNode);
 
 
-                while (queue.Count > 0)
+            while (queue.Count > 0)
+            {
+                var current = queue.Dequeue();
+                current.hasVisited = true;
+                path.Add(current.Value);
+
+                if (current == endNode)
                 {
-                    var current = queue.Dequeue();
-                    current.hasVisited = true;
-                    path.Add(current.Value);
-
-                    if (current== endNode)
-                    {
-                        return path;
-                    }
-
-                    for (int j = 0; j < current.Neighbors.Count; j++)
-                    {
-                        if (!current.Neighbors[j].hasVisited)
-                        {
-                            current.Neighbors[j].hasVisited = true;
-                            queue.Enqueue(current.Neighbors[j]);
-                        }
-                        else if (queue.Contains(current))
-                        {
-                            //cycle[i] = true;
-                            break;
-                        }
-                    }                  
+                    return path;
                 }
-           // }
+
+                for (int j = 0; j < current.Neighbors.Count; j++)
+                {
+                    if (!current.Neighbors[j].hasVisited)
+                    {
+                        current.Neighbors[j].hasVisited = true;
+                        queue.Enqueue(current.Neighbors[j]);
+                    }
+                    else if (queue.Contains(current))
+                    {
+                        //cycle[i] = true;
+                        break;
+                    }
+                }
+            }
+            // }
             return new List<T>();
         }
     }

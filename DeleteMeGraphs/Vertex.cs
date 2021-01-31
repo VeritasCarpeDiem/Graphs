@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 
 namespace Graphs
 {
+    [DebuggerDisplay("{" + nameof(GetDebuggerDisplay) + "(),nq}")]
     class Vertex<T>
     {
         public T Value { get;  set; }
@@ -16,6 +18,10 @@ namespace Graphs
             Value = value;
             Neighbors = new List<Vertex<T>>();
         }
-       
+
+        private string GetDebuggerDisplay()
+        {
+            return $"{Value}";
+        }
     }
 }

@@ -40,12 +40,30 @@ namespace Graphs
             }
             for (; i < lines.Length; i++)
             {
-               string[] connection = lines[i].Split(',');
-                
-               graph.AddEdge(connection[0], connection[1]);
-                
+                string[] connection = lines[i].Split(',');
+
+                graph.AddEdge(connection[0], connection[1]);
+
             }
-           
+
+            path = graph.BFSShortestPathByHops("LAX","HOU");
+
+            foreach (var item in path)
+            {
+                Console.WriteLine(item);
+            }
+
+            List<string> reverse = new List<string>();
+
+            for (int j = 0; j < path.Count; j++)
+            {
+                reverse.Add(path[path.Count - j-1]);
+                 
+            }
+            foreach (var item in reverse)
+            {
+                Console.WriteLine(item);
+            }
             //graph.AddVertex("karan");
             //graph.AddVertex("jin");
             //graph.AddVertex("mikah");
@@ -64,5 +82,6 @@ namespace Graphs
             //}
             //;
         }
+       
     }
 }
