@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 
 
-namespace Graphs
+namespace DeleteMeGraphs
 {
     class Program
     {
@@ -42,7 +42,7 @@ namespace Graphs
             {
                 string[] connection = lines[i].Split(',');
 
-                graph.AddEdge(connection[0], connection[1]);
+                graph.AddEdge(connection[0], connection[1], int.Parse(connection[2]));
 
             }
 
@@ -64,23 +64,9 @@ namespace Graphs
             {
                 Console.WriteLine(item);
             }
-            //graph.AddVertex("karan");
-            //graph.AddVertex("jin");
-            //graph.AddVertex("mikah");
-            //graph.AddVertex("chris");
 
-
-            //graph.AddEdge("karan", "jin");
-            //graph.AddEdge("jin", "chris");
-            //graph.AddEdge("jin", "mikah");
-
-
-            //path = graph.BFSPath("karan", "mikah");
-            //foreach (var item in path)
-            //{
-            //    Console.WriteLine(item);
-            //}
-            //;
+            graph.Djikstra("STL", "LAX");
+            ;
         }
        
     }

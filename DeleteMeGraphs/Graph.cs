@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Graphs
+namespace DeleteMeGraphs
 {
     class Graph<T>
     {
         public List<Vertex<T>> Vertices { get; set; }
+
 
         public int VertexCount => Vertices.Count;
 
@@ -41,13 +42,24 @@ namespace Graphs
             {
                 return true;
             }
-            for (int i = 0; i < vertex.Neighbors.Count; i++) //for each neighbor, remove the connection/edge
+
+            // iterate over all vertices' edges, if the end is vertex, remove the edge from their list of edges
+            foreach (var item in Vertices)
             {
-                RemoveEdge(vertex, vertex.Neighbors[i]);
+                int removedCount = item.Neighbors.RemoveAll(edge => edge.End == vertex);
+                //for (int i = 0; i < vertex.Neighbors.Count; i++)
+                //{
+                //    if (item == vertex)
+                //    {
+                //        RemoveEdge(item, vertex);
+                //    }
+                //}
             }
+
+
             return Vertices.Remove(vertex);
         }
-        public bool AddEdge(Vertex<T> a, Vertex<T> b)
+        public bool AddEdge(Vertex<T> a, Vertex<T> b, int dist = 0)
         {
             if (a == null)
             {
@@ -62,37 +74,45 @@ namespace Graphs
                 return false;
             }
 
-            a.Neighbors.Add(b);
-            b.Neighbors.Add(a);
+            a.Neighbors.Add(new Edge<T>(a, b, dist));
 
             //Vertices[Vertices.IndexOf(a)].Neighbors.Add(b);
             //Vertices[Vertices.IndexOf(b)].Neighbors.Add(a);
             return true;
 
         }
-        public bool AddEdge(T a, T b)
+        public Edge<T> GetEdge(Vertex<T> a, Vertex<T> b)
+        {
+            if (!(Vertices.Contains(a) && Vertices.Contains(b)))
+            {
+                return null;
+            }
+
+            foreach (var edge in a.Neighbors)
+            {
+                if (edge.End == b)
+                {
+                    return edge;
+                }
+            }
+
+            return null;
+        }
+        public bool AddEdge(T a, T b, int dist)
         {
             Vertex<T> A = Search(a);
             Vertex<T> B = Search(b);
-
-            return AddEdge(A, B);
+            return AddEdge(A, B, dist);
         }
         public bool RemoveEdge(Vertex<T> a, Vertex<T> b) //helper function
         {
-            if (a == null)
+            var edge = GetEdge(a, b);
+
+            if (a == null || b == null)
             {
                 throw new ArgumentNullException();
             }
-            if (b == null)
-            {
-                throw new ArgumentNullException();
-            }
-            if (Vertices.Contains(a) && Vertices.Contains(b) && Vertices[Vertices.IndexOf(a)].Neighbors.Contains(b))
-            {
-                Vertices[Vertices.IndexOf(a)].Neighbors.Remove(b);
-                Vertices[Vertices.IndexOf(b)].Neighbors.Remove(a);
-                return true;
-            }
+            a.Neighbors.Remove(edge);
             return false;
         }
         public void RemoveEdge(T a, T b)
@@ -148,7 +168,7 @@ namespace Graphs
                     if (!current.Neighbors[i].hasVisited)
                     {
                         current.Neighbors[i].hasVisited = true;
-                        stack.Push(current.Neighbors[i]);
+                        stack.Push(current.Neighbors[i].End);
                     }
                 }
 
@@ -189,8 +209,8 @@ namespace Graphs
                     if (!current.Neighbors[i].hasVisited)
                     {
                         current.Neighbors[i].hasVisited = true;
-                        queue.Enqueue(current.Neighbors[i]);
-                        dict[current.Neighbors[i]] = current;
+                        queue.Enqueue(current.Neighbors[i].End);
+                        dict[current.Neighbors[i].End] = current;
 
                     }
                     //else if (queue.Contains(current)) break;
@@ -202,11 +222,11 @@ namespace Graphs
 
             var pathStart = endNode;
 
-            while(pathStart != null)
+            while (pathStart != null)
             {
                 path.Add(pathStart.Value);
                 pathStart = dict[pathStart];
-                
+
             }
             if (path.Contains(endNode.Value)) return path;
             else return new List<T>();
@@ -223,11 +243,66 @@ namespace Graphs
             //    }
             //}
 
-           
+
         }
 
+        public List<T> Djikstra(T start, T end)
+        {
+            Queue<Vertex<T>> queue = new Queue<Vertex<T>>();
+            List<T> path = new List<T>();
+            Vertices.ForEach(vertex => vertex.hasVisited = false);
+          
+            var startNode = Search(start);
+            if (startNode is null) return path;
+            var endNode = Search(end);
+            if (endNode is null) return path;
+            var dic = new Dictionary<Vertex<T>,(Vertex<T> parent, int dist)>();
 
-        public List<T> BFSPath(T start, T end)
+            dic[startNode] = (null, 0); // set distance of startNode to 0
+            queue.Enqueue(startNode);
+            while (queue.Count > 0)
+            {
+                var current = queue.Dequeue();
+                current.hasVisited = true;
+                path.Add(current.Value);
+
+                if (current == endNode)
+                {
+                    return path;
+                }
+                foreach (var edge in current.Neighbors)
+                {
+                    var neighbor = edge.End;
+                    int tentativedist = edge.Dist+ dic[current].dist;
+                    if (tentativedist < edge.Dist)
+                    {
+                        dic[neighbor] = (current, tentativedist);
+                        neighbor.hasVisited = false;
+                        path.Add(current.Value);
+                    }
+
+                    //for (int i = 0; i < current.Neighbors.Count; i++)
+                    //{
+                    //    if (!current.Neighbors[i].hasVisited)
+                    //    {
+                    //        current.Neighbors[i].hasVisited = true;
+                    //        queue.Enqueue(current.Neighbors[i].End);
+
+                    //    }
+                    //}
+                    if(!queue.Contains(neighbor) && !neighbor.hasVisited)
+                    {
+                        queue.Enqueue(current);
+                    }
+                    if(current==endNode)
+                    {
+                        return path;
+                    }
+                }
+            }
+            return new List<T>();
+        }
+            public List<T> BFSPath(T start, T end)
         {
             //bool[] cycle = new bool[Vertices.Count];
             Queue<Vertex<T>> queue = new Queue<Vertex<T>>();
@@ -260,7 +335,7 @@ namespace Graphs
                     if (!current.Neighbors[j].hasVisited)
                     {
                         current.Neighbors[j].hasVisited = true;
-                        queue.Enqueue(current.Neighbors[j]);
+                        queue.Enqueue(current.Neighbors[j].End);
                     }
                     else if (queue.Contains(current))
                     {
