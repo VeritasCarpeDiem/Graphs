@@ -6,6 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Heaps\Heaps.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Update="AirportProblem.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

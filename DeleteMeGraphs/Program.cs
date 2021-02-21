@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using DeleteMeHeaps;
 
 
 namespace DeleteMeGraphs
@@ -53,19 +54,15 @@ namespace DeleteMeGraphs
                 Console.WriteLine(item);
             }
 
-            List<string> reverse = new List<string>();
+          
 
-            for (int j = 0; j < path.Count; j++)
-            {
-                reverse.Add(path[path.Count - j-1]);
-                 
-            }
-            foreach (var item in reverse)
+            path=graph.Djikstra("STL", "LAX");
+            foreach(var item in path)
             {
                 Console.WriteLine(item);
             }
 
-            graph.Djikstra("STL", "LAX");
+            
             ;
         }
        

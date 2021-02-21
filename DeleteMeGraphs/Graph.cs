@@ -165,9 +165,9 @@ namespace DeleteMeGraphs
 
                 for (int i = 0; i < current.Neighbors.Count; i++)
                 {
-                    if (!current.Neighbors[i].hasVisited)
+                    if (!current.Neighbors[i].isVisited)
                     {
-                        current.Neighbors[i].hasVisited = true;
+                        current.Neighbors[i].isVisited = true;
                         stack.Push(current.Neighbors[i].End);
                     }
                 }
@@ -206,9 +206,9 @@ namespace DeleteMeGraphs
                 //path.Add(current.Value);
                 for (int i = 0; i < current.Neighbors.Count; i++)
                 {
-                    if (!current.Neighbors[i].hasVisited)
+                    if (!current.Neighbors[i].End.hasVisited)
                     {
-                        current.Neighbors[i].hasVisited = true;
+                        current.Neighbors[i].End.hasVisited = true;
                         queue.Enqueue(current.Neighbors[i].End);
                         dict[current.Neighbors[i].End] = current;
 
@@ -217,33 +217,18 @@ namespace DeleteMeGraphs
 
                     //prev = current;
                 }
-
             }
-
             var pathStart = endNode;
 
             while (pathStart != null)
             {
                 path.Add(pathStart.Value);
+                //pathStart.hasVisited = true;
                 pathStart = dict[pathStart];
-
             }
+            path.Reverse();
             if (path.Contains(endNode.Value)) return path;
             else return new List<T>();
-            //for (int i = 0; i < dict.Count; i++)
-            //{
-            //    var value = dict[current];
-            //    if (value is null)
-            //    {
-            //        return path;
-            //    }
-            //    else
-            //    {
-            //        path.Add(value.Value);
-            //    }
-            //}
-
-
         }
 
         public List<T> Djikstra(T start, T end)
@@ -251,12 +236,12 @@ namespace DeleteMeGraphs
             Queue<Vertex<T>> queue = new Queue<Vertex<T>>();
             List<T> path = new List<T>();
             Vertices.ForEach(vertex => vertex.hasVisited = false);
-          
+
             var startNode = Search(start);
             if (startNode is null) return path;
             var endNode = Search(end);
             if (endNode is null) return path;
-            var dic = new Dictionary<Vertex<T>,(Vertex<T> parent, int dist)>();
+            var dic = new Dictionary<Vertex<T>, (Vertex<T> parent, int dist)>();
 
             dic[startNode] = (null, 0); // set distance of startNode to 0
             queue.Enqueue(startNode);
@@ -273,7 +258,7 @@ namespace DeleteMeGraphs
                 foreach (var edge in current.Neighbors)
                 {
                     var neighbor = edge.End;
-                    int tentativedist = edge.Dist+ dic[current].dist;
+                    int tentativedist = edge.Dist + dic[current].dist;
                     if (tentativedist < edge.Dist)
                     {
                         dic[neighbor] = (current, tentativedist);
@@ -290,11 +275,11 @@ namespace DeleteMeGraphs
 
                     //    }
                     //}
-                    if(!queue.Contains(neighbor) && !neighbor.hasVisited)
+                    if (!queue.Contains(neighbor) && !neighbor.hasVisited)
                     {
                         queue.Enqueue(current);
                     }
-                    if(current==endNode)
+                    if (current == endNode)
                     {
                         return path;
                     }
@@ -302,7 +287,7 @@ namespace DeleteMeGraphs
             }
             return new List<T>();
         }
-            public List<T> BFSPath(T start, T end)
+        public List<T> BFSPath(T start, T end)
         {
             //bool[] cycle = new bool[Vertices.Count];
             Queue<Vertex<T>> queue = new Queue<Vertex<T>>();
@@ -332,9 +317,9 @@ namespace DeleteMeGraphs
 
                 for (int j = 0; j < current.Neighbors.Count; j++)
                 {
-                    if (!current.Neighbors[j].hasVisited)
+                    if (!current.Neighbors[j].isVisited)
                     {
-                        current.Neighbors[j].hasVisited = true;
+                        current.Neighbors[j].isVisited = true;
                         queue.Enqueue(current.Neighbors[j].End);
                     }
                     else if (queue.Contains(current))

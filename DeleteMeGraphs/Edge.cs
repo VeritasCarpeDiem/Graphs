@@ -10,14 +10,14 @@ namespace DeleteMeGraphs
         public Vertex<T> End { get; set; }
         public int Dist { get; set;  }
 
-        public bool hasVisited { get; set; }
+        public bool isVisited { get; set; }
 
         public Edge(Vertex<T> start, Vertex<T> end, int dist)
         {
             Start = start;
             End = end;
             Dist = dist;
-            hasVisited = false;
+            isVisited = false;
         }
     }
 }
