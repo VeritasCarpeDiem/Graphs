@@ -6,43 +6,75 @@ namespace DeleteMeHeaps
 {
     public class Heaps<T> where T : IComparable<T>
     {
+        IComparer<T> comparer;
 
-        int capacity;
-        int Count;
-        T[] arr;
+        T[] tree;
+        int capacity => tree.Length;
+        public int Count { get; private set; }
 
-        public Heaps()
+        bool isEmpty => Count == 0;
+        private Heaps(T[] collection, IComparer<T> comparer)
         {
-            capacity = 5;
-            arr = new T[capacity];
-
-            Count = 0;
+            tree = collection;
+            comparer = this.comparer;
+            Count = capacity;
         }
 
         public T Pop()
         {
-            T value = arr[0];
+            if (isEmpty)
+            {
+                //throw exception if heap if empty
+                throw new InvalidOperationException("Heap if Empty");
+            }
+            T root = tree[0];
 
+            tree[0] = tree[Count - 1];
+            tree[Count - 1] = default(T);
             Count--;
-            return value;
+
+            HeapifyDown(0);
+            return root;
         }
         public void Insert(T value)
         {
-            if (Count == arr.Length)
+            //increase capacity of tree by factor of 2
+            if (Count == tree.Length)
             {
                 T[] temp = new T[capacity * 2];
 
-                for (int i = 0; i < arr.Length; i++)
+                for (int i = 0; i < tree.Length; i++)
                 {
-                   arr[i] = temp[i] ;
+                    tree[i] = temp[i];
                 }
-                arr = temp;
-                capacity = capacity * 2;            }
+                tree = temp;
+            }
 
-            arr[Count] = value;
+            tree[Count] = value;
             Count++;
+
+            HeapifyUp(Count - 1);
         }
-        public void HeapifyUp()
+        private void HeapifyUp(int index)
+        {
+            int parent = Count - 1 / 2;
+            if (comparer.Compare(tree[index], tree[0]) < 0)
+            {
+                //swap index and parent values
+                T temp = tree[index];
+                tree[index] = tree[parent];
+                tree[parent] = temp;
+            }
+
+            HeapifyUp(parent); //recursively heapifyup until your reach root
+        }
+        //void swap(ref T a, ref T b)
+        //{
+        //    T temp = a;
+        //    a = b;
+        //    b = temp;
+        //}
+        public void HeapifyDown(int index)
         {
 
         }
