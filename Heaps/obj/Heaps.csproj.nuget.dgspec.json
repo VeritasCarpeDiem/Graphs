@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "\\\\GMRDC1\\Folder Redirection\\Jin.Kim\\Documents\\Visual Studio 2019\\Projects\\DeleteMeGraphs\\Heaps\\Heaps.csproj": {}
+    "\\\\GMRDC1\\Folder Redirection\\jin.kim\\Documents\\Visual Studio 2019\\Projects\\DeleteMeGraphs\\Heaps\\Heaps.csproj": {}
   },
   "projects": {
-    "\\\\GMRDC1\\Folder Redirection\\Jin.Kim\\Documents\\Visual Studio 2019\\Projects\\DeleteMeGraphs\\Heaps\\Heaps.csproj": {
+    "\\\\GMRDC1\\Folder Redirection\\jin.kim\\Documents\\Visual Studio 2019\\Projects\\DeleteMeGraphs\\Heaps\\Heaps.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "\\\\GMRDC1\\Folder Redirection\\Jin.Kim\\Documents\\Visual Studio 2019\\Projects\\DeleteMeGraphs\\Heaps\\Heaps.csproj",
+        "projectUniqueName": "\\\\GMRDC1\\Folder Redirection\\jin.kim\\Documents\\Visual Studio 2019\\Projects\\DeleteMeGraphs\\Heaps\\Heaps.csproj",
         "projectName": "Heaps",
-        "projectPath": "\\\\GMRDC1\\Folder Redirection\\Jin.Kim\\Documents\\Visual Studio 2019\\Projects\\DeleteMeGraphs\\Heaps\\Heaps.csproj",
-        "packagesPath": "C:\\Users\\Jin.Kim\\.nuget\\packages\\",
-        "outputPath": "\\\\GMRDC1\\Folder Redirection\\Jin.Kim\\Documents\\Visual Studio 2019\\Projects\\DeleteMeGraphs\\Heaps\\obj\\",
+        "projectPath": "\\\\GMRDC1\\Folder Redirection\\jin.kim\\Documents\\Visual Studio 2019\\Projects\\DeleteMeGraphs\\Heaps\\Heaps.csproj",
+        "packagesPath": "C:\\Users\\jin.kim\\.nuget\\packages\\",
+        "outputPath": "\\\\GMRDC1\\Folder Redirection\\jin.kim\\Documents\\Visual Studio 2019\\Projects\\DeleteMeGraphs\\Heaps\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Jin.Kim\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\jin.kim\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
