@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DeleteMeHeaps;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -230,10 +231,17 @@ namespace DeleteMeGraphs
             if (path.Contains(endNode.Value)) return path;
             else return new List<T>();
         }
+        //public int DoSomething(int x, int y)
+        //{
+        //    return -1;
+        //}
 
-        public List<T> Djikstra(T start, T end)
+
+        public IEnumerable<T> Djikstra(T start, T end)
         {
-            Queue<Vertex<T>> queue = new Queue<Vertex<T>>();
+            //Comparer<int> comp = Comparer<int>.Create(DoSomething);
+            Comparer<Vertex<T>> comparer = Comparer<Vertex<T>>.Create((x, y) => x.cumulDist.CompareTo(y.cumulDist));
+            Heaps<Vertex<T>> queue = new Heaps<Vertex<T>>(comparer);
             List<T> path = new List<T>();
             Vertices.ForEach(vertex => vertex.hasVisited = false);
 
@@ -244,44 +252,52 @@ namespace DeleteMeGraphs
             var dic = new Dictionary<Vertex<T>, (Vertex<T> parent, int dist)>();
 
             dic[startNode] = (null, 0); // set distance of startNode to 0
-            queue.Enqueue(startNode);
+            queue.Push(startNode);
             while (queue.Count > 0)
             {
-                var current = queue.Dequeue();
-                current.hasVisited = true;
-                path.Add(current.Value);
-
-                if (current == endNode)
+                var current = queue.Pop();
+                if (!current.hasVisited)
                 {
-                    return path;
-                }
-                foreach (var edge in current.Neighbors)
-                {
-                    var neighbor = edge.End;
-                    int tentativedist = edge.Dist + dic[current].dist;
-                    if (tentativedist < edge.Dist)
-                    {
-                        dic[neighbor] = (current, tentativedist);
-                        neighbor.hasVisited = false;
-                        path.Add(current.Value);
-                    }
+                    current.hasVisited = true;
+                    // path.Add(current.Value);
 
-                    //for (int i = 0; i < current.Neighbors.Count; i++)
-                    //{
-                    //    if (!current.Neighbors[i].hasVisited)
-                    //    {
-                    //        current.Neighbors[i].hasVisited = true;
-                    //        queue.Enqueue(current.Neighbors[i].End);
-
-                    //    }
-                    //}
-                    if (!queue.Contains(neighbor) && !neighbor.hasVisited)
-                    {
-                        queue.Enqueue(current);
-                    }
                     if (current == endNode)
                     {
-                        return path;
+
+                        Vertex<T> temp = endNode;
+                        
+                        while(temp != null)
+                        {
+                            path.Add(temp.Value);
+                            temp = dic[temp].parent;     
+                        }
+                        
+                        //return path;
+                    }
+                    foreach (var edge in current.Neighbors)
+                    {
+                        var neighbor = edge.End;
+                        int tentativedist = edge.Dist + dic[current].dist;
+                        if (tentativedist < neighbor.cumulDist && !neighbor.hasVisited)
+                        {
+                            dic[neighbor] = (current, tentativedist);
+                            queue.Push(current);
+                            //  path.Add(current.Value);
+                        }
+
+                        //for (int i = 0; i < current.Neighbors.Count; i++)
+                        //{
+                        //    if (!current.Neighbors[i].hasVisited)
+                        //    {
+                        //        current.Neighbors[i].hasVisited = true;
+                        //        queue.Push(current.Neighbors[i].End);
+
+                        //    }
+                        //}
+                        //if (current == endNode)
+                        //{
+                        //    return path;
+                        //}
                     }
                 }
             }

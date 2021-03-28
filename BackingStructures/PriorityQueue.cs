@@ -31,7 +31,6 @@ namespace DeleteMeHeaps
 
         public void Enqueue(T value)
         {
-            Count++;
             if (Count == Tree.Length)
             {
                 T[] temp = new T[Count * 2];
@@ -45,6 +44,7 @@ namespace DeleteMeHeaps
             Tree[Count] = value;
 
             //Heaps<int>.HeapifyUp(Count);
+            Count++;
         }
 
         public T Dequeue()

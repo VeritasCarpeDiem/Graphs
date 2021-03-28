@@ -6,6 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BackingStructures\BackingStructures.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Update="AirportProblem.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
