@@ -12,6 +12,9 @@ namespace DeleteMeGraphs
         public T Value { get;  set; }
 
         public List<Edge<T>> Neighbors {get; set;}
+        
+        public int cumulDist { get; set; }
+
         public bool hasVisited { get; set; }
         public int count => Neighbors.Count;
         public Vertex(T value)

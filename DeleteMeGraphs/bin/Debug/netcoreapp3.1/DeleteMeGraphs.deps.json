@@ -7,14 +7,27 @@
   "targets": {
     ".NETCoreApp,Version=v3.1": {
       "DeleteMeGraphs/1.0.0": {
+        "dependencies": {
+          "BackingStructures": "1.0.0"
+        },
         "runtime": {
           "DeleteMeGraphs.dll": {}
+        }
+      },
+      "BackingStructures/1.0.0": {
+        "runtime": {
+          "BackingStructures.dll": {}
         }
       }
     }
   },
   "libraries": {
     "DeleteMeGraphs/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BackingStructures/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

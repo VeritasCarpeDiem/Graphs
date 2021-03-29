@@ -12,10 +12,8 @@
 \\GMRDC1\Folder Redirection\jin.kim\Documents\Visual Studio 2019\Projects\DeleteMeGraphs\DeleteMeGraphs\obj\Debug\netcoreapp3.1\DeleteMeGraphs.pdb
 \\GMRDC1\Folder Redirection\jin.kim\Documents\Visual Studio 2019\Projects\DeleteMeGraphs\DeleteMeGraphs\obj\Debug\netcoreapp3.1\DeleteMeGraphs.genruntimeconfig.cache
 \\GMRDC1\Folder Redirection\jin.kim\Documents\Visual Studio 2019\Projects\DeleteMeGraphs\DeleteMeGraphs\bin\Debug\netcoreapp3.1\AirportProblem.txt
-\\GMRDC1\Folder Redirection\jin.kim\Documents\Visual Studio 2019\Projects\DeleteMeGraphs\DeleteMeGraphs\bin\Debug\netcoreapp3.1\Heaps.exe
-\\GMRDC1\Folder Redirection\jin.kim\Documents\Visual Studio 2019\Projects\DeleteMeGraphs\DeleteMeGraphs\bin\Debug\netcoreapp3.1\Heaps.dll
-\\GMRDC1\Folder Redirection\jin.kim\Documents\Visual Studio 2019\Projects\DeleteMeGraphs\DeleteMeGraphs\bin\Debug\netcoreapp3.1\Heaps.pdb
 \\GMRDC1\Folder Redirection\jin.kim\Documents\Visual Studio 2019\Projects\DeleteMeGraphs\DeleteMeGraphs\obj\Debug\netcoreapp3.1\DeleteMeGraphs.csproj.CopyComplete
+<<<<<<< HEAD
 C:\Users\Veritas\Desktop\Coding Projects\repos\Graphs\DeleteMeGraphs\obj\Debug\netcoreapp3.1\DeleteMeGraphs.csprojAssemblyReference.cache
 C:\Users\Veritas\Desktop\Coding Projects\repos\Graphs\DeleteMeGraphs\obj\Debug\netcoreapp3.1\DeleteMeGraphs.AssemblyInfoInputs.cache
 C:\Users\Veritas\Desktop\Coding Projects\repos\Graphs\DeleteMeGraphs\obj\Debug\netcoreapp3.1\DeleteMeGraphs.AssemblyInfo.cs
@@ -30,3 +28,10 @@ C:\Users\Veritas\Desktop\Coding Projects\repos\Graphs\DeleteMeGraphs\bin\Debug\n
 C:\Users\Veritas\Desktop\Coding Projects\repos\Graphs\DeleteMeGraphs\bin\Debug\netcoreapp3.1\DeleteMeGraphs.dll
 C:\Users\Veritas\Desktop\Coding Projects\repos\Graphs\DeleteMeGraphs\bin\Debug\netcoreapp3.1\DeleteMeGraphs.pdb
 C:\Users\Veritas\Desktop\Coding Projects\repos\Graphs\DeleteMeGraphs\obj\Debug\netcoreapp3.1\DeleteMeGraphs.genruntimeconfig.cache
+=======
+\\GMRDC1\Folder Redirection\Jin.Kim\Documents\Visual Studio 2019\Projects\DeleteMeGraphs\DeleteMeGraphs\bin\Debug\netcoreapp3.1\BackingStructures.dll
+\\GMRDC1\Folder Redirection\Jin.Kim\Documents\Visual Studio 2019\Projects\DeleteMeGraphs\DeleteMeGraphs\bin\Debug\netcoreapp3.1\BackingStructures.pdb
+>>>>>>> 3d04a842c92a732048aa2ae7e2679958fb026a27
+C:\Users\Veritas\Desktop\Coding Projects\repos\Graphs\DeleteMeGraphs\bin\Debug\netcoreapp3.1\BackingStructures.dll
+C:\Users\Veritas\Desktop\Coding Projects\repos\Graphs\DeleteMeGraphs\bin\Debug\netcoreapp3.1\BackingStructures.pdb
+C:\Users\Veritas\Desktop\Coding Projects\repos\Graphs\DeleteMeGraphs\obj\Debug\netcoreapp3.1\DeleteMeGraphs.csproj.CopyComplete

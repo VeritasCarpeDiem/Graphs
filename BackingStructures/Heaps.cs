@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DeleteMeHeaps
 {
-    public class Heaps<T> where T : IComparable<T>
+    public class Heaps<T> 
     {
         private IComparer<T> comparer;
 
@@ -26,7 +26,7 @@ namespace DeleteMeHeaps
         {
             foreach (var item in collection)
             {
-                Insert(item);
+                Push(item);
             } 
             this.comparer = comparer;
             Count = capacity;
@@ -48,7 +48,7 @@ namespace DeleteMeHeaps
             HeapifyDown(0);
             return root;
         }
-        public void Insert(T value)
+        public void Push(T value)
         {
             //increase capacity of tree by factor of 2
             if (Count == tree.Length)
@@ -67,6 +67,17 @@ namespace DeleteMeHeaps
             Count++;
 
             HeapifyUp(Count - 1);
+        }
+        public bool Contains(T value)
+        {
+            foreach (var item in tree)
+            {
+                if(comparer.Compare(item, value) == 0)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
         public void HeapifyUp(int index)
         {

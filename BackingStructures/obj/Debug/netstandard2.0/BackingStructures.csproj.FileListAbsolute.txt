@@ -7,3 +7,12 @@
 \\GMRDC1\Folder Redirection\jin.kim\Documents\Visual Studio 2019\Projects\DeleteMeGraphs\BackingStructures\obj\Debug\netstandard2.0\BackingStructures.csproj.CoreCompileInputs.cache
 \\GMRDC1\Folder Redirection\jin.kim\Documents\Visual Studio 2019\Projects\DeleteMeGraphs\BackingStructures\obj\Debug\netstandard2.0\BackingStructures.dll
 \\GMRDC1\Folder Redirection\jin.kim\Documents\Visual Studio 2019\Projects\DeleteMeGraphs\BackingStructures\obj\Debug\netstandard2.0\BackingStructures.pdb
+C:\Users\Veritas\Desktop\Coding Projects\repos\Graphs\BackingStructures\bin\Debug\netstandard2.0\BackingStructures.deps.json
+C:\Users\Veritas\Desktop\Coding Projects\repos\Graphs\BackingStructures\bin\Debug\netstandard2.0\BackingStructures.dll
+C:\Users\Veritas\Desktop\Coding Projects\repos\Graphs\BackingStructures\bin\Debug\netstandard2.0\BackingStructures.pdb
+C:\Users\Veritas\Desktop\Coding Projects\repos\Graphs\BackingStructures\obj\Debug\netstandard2.0\BackingStructures.csprojAssemblyReference.cache
+C:\Users\Veritas\Desktop\Coding Projects\repos\Graphs\BackingStructures\obj\Debug\netstandard2.0\BackingStructures.AssemblyInfoInputs.cache
+C:\Users\Veritas\Desktop\Coding Projects\repos\Graphs\BackingStructures\obj\Debug\netstandard2.0\BackingStructures.AssemblyInfo.cs
+C:\Users\Veritas\Desktop\Coding Projects\repos\Graphs\BackingStructures\obj\Debug\netstandard2.0\BackingStructures.csproj.CoreCompileInputs.cache
+C:\Users\Veritas\Desktop\Coding Projects\repos\Graphs\BackingStructures\obj\Debug\netstandard2.0\BackingStructures.dll
+C:\Users\Veritas\Desktop\Coding Projects\repos\Graphs\BackingStructures\obj\Debug\netstandard2.0\BackingStructures.pdb
