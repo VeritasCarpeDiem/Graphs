@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "x/CzOJ8Qh8hAbm9ACmfrCUtCGZXc+L1P3OVEY6+YqnAX2/zum87B9R+Qa6KrDnUBjnqWYtFWmy2hlslaXLCMhw==",
   "success": true,
   "projectFilePath": "\\\\GMRDC1\\Folder Redirection\\jin.kim\\Documents\\Visual Studio 2019\\Projects\\DeleteMeGraphs\\DeleteMeGraphs\\DeleteMeGraphs.csproj",
+=======
+  "dgSpecHash": "Nj5WGCrkrdNizGRaWFqwjGGEWHYNNvoi+96NXc7g6gBYtnALkxFc2XeCnxt/PY16spC+rnzz1MwIWPGn48p9xg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Veritas\\Desktop\\Coding Projects\\repos\\Graphs\\DeleteMeGraphs\\DeleteMeGraphs.csproj",
+>>>>>>> e45aa40f8397e5c486e87396d1ffd11fd72d06ff
   "expectedPackageFiles": [],
   "logs": []
 }

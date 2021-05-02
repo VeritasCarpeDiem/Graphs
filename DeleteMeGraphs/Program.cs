@@ -1,8 +1,12 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+<<<<<<< HEAD
 using System.Linq;
 using DeleteMeHeaps;
+=======
+>>>>>>> e45aa40f8397e5c486e87396d1ffd11fd72d06ff
 
 
 namespace DeleteMeGraphs
@@ -49,6 +53,7 @@ namespace DeleteMeGraphs
 
             }
 
+<<<<<<< HEAD
             //path = graph.BFSShortestPathByHops("LAX","HOU");
 
             //foreach (var item in path)
@@ -61,7 +66,50 @@ namespace DeleteMeGraphs
             {
                 Console.WriteLine(item);
             }
+=======
+            path = graph.BFSShortestPathByHops("LAX", "HOU");
+
+            foreach (var item in path)
+            {
+                Console.WriteLine(item);
+            }
+
+            //path = graph.Djikstra("STL", "LAX");
+            //foreach (var item in path)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            string[] names = new string[] { "Sally", "Jin", "Paul" };
+            Foo<string> foo = new Foo<string>(names);
+
+            foreach (var item in foo)
+            {
+                Console.WriteLine(item);
+            }
         }
-       
+        public class Foo<T> : IEnumerable<T>
+        {
+            List<T> names;
+
+            public Foo(T[] arr)
+            {
+                this.names = new List<T>(arr);
+            }
+
+            public IEnumerator<T> GetEnumerator()
+            {
+                for (int i = 0; i < names.Count; i++)
+                {
+                    yield return names[i];
+                }
+            }
+            IEnumerator IEnumerable.GetEnumerator()
+            {
+                return GetEnumerator();
+            }
+>>>>>>> e45aa40f8397e5c486e87396d1ffd11fd72d06ff
+        }
+
     }
 }
