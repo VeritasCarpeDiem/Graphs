@@ -34,11 +34,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "\\\\GMRDC1\\Folder Redirection\\Jin.Kim\\Documents\\Visual Studio 2019\\Projects\\DeleteMeGraphs\\DeleteMeGraphs\\DeleteMeGraphs.csproj",
+      "projectUniqueName": "\\\\GMRDC1\\Folder Redirection\\jin.kim\\Documents\\Visual Studio 2019\\Projects\\DeleteMeGraphs\\DeleteMeGraphs\\DeleteMeGraphs.csproj",
       "projectName": "DeleteMeGraphs",
-      "projectPath": "\\\\GMRDC1\\Folder Redirection\\Jin.Kim\\Documents\\Visual Studio 2019\\Projects\\DeleteMeGraphs\\DeleteMeGraphs\\DeleteMeGraphs.csproj",
+      "projectPath": "\\\\GMRDC1\\Folder Redirection\\jin.kim\\Documents\\Visual Studio 2019\\Projects\\DeleteMeGraphs\\DeleteMeGraphs\\DeleteMeGraphs.csproj",
       "packagesPath": "C:\\Users\\Jin.Kim\\.nuget\\packages\\",
-      "outputPath": "\\\\GMRDC1\\Folder Redirection\\Jin.Kim\\Documents\\Visual Studio 2019\\Projects\\DeleteMeGraphs\\DeleteMeGraphs\\obj\\",
+      "outputPath": "\\\\GMRDC1\\Folder Redirection\\jin.kim\\Documents\\Visual Studio 2019\\Projects\\DeleteMeGraphs\\DeleteMeGraphs\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -60,8 +60,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "\\\\GMRDC1\\Folder Redirection\\Jin.Kim\\Documents\\Visual Studio 2019\\Projects\\DeleteMeGraphs\\BackingStructures\\BackingStructures.csproj": {
-              "projectPath": "\\\\GMRDC1\\Folder Redirection\\Jin.Kim\\Documents\\Visual Studio 2019\\Projects\\DeleteMeGraphs\\BackingStructures\\BackingStructures.csproj"
+            "\\\\GMRDC1\\Folder Redirection\\jin.kim\\Documents\\Visual Studio 2019\\Projects\\DeleteMeGraphs\\BackingStructures\\BackingStructures.csproj": {
+              "projectPath": "\\\\GMRDC1\\Folder Redirection\\jin.kim\\Documents\\Visual Studio 2019\\Projects\\DeleteMeGraphs\\BackingStructures\\BackingStructures.csproj"
             }
           }
         }

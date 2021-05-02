@@ -13,25 +13,36 @@ namespace DeleteMeHeaps
         public int Count { get; private set; }
 
 
-        bool isEmpty => Count == 0;
+        public bool isEmpty => Count == 0;
 
-        //constructor for when heap is empty
-        public Heaps(IComparer<T> comparer) : this(new T[0], comparer)
+        //ctor that takes in nothing
+        public Heaps()
         {
 
+        }
+
+        //constructor for when heap is empty
+        public Heaps(IComparer<T> Comparer) 
+        {
+            tree = new T[0];
+            comparer = Comparer;
         }
       
         //constructor that takes in existing array and sets tree equal to that array. Array is passed by ref
-        private Heaps(T[] collection, IComparer<T> comparer)
-        {
-            foreach (var item in collection)
-            {
-                Push(item);
-            } 
-            this.comparer = comparer;
-            Count = capacity;
-        }
-
+        //private Heaps(T[] collection, IComparer<T> comparer)
+        //{
+        //    if(collection == null)
+        //    {
+        //        throw new ArgumentException();
+        //    }
+        //    foreach (var item in collection)
+        //    {
+        //        Push(item);
+        //    } 
+        //    this.comparer = comparer;
+        //    Count = capacity;
+        //}
+        
         public T Pop()
         {
             if (isEmpty)
@@ -62,9 +73,9 @@ namespace DeleteMeHeaps
                 tree = temp;
                 
             }
-
-            tree[Count] = value;
             Count++;
+            tree[Count] = value;
+            
 
             HeapifyUp(Count - 1);
         }
@@ -81,6 +92,7 @@ namespace DeleteMeHeaps
         }
         public void HeapifyUp(int index)
         {
+
             int parent = Count - 1 / 2;
             if (comparer.Compare(tree[index], tree[0]) < 0)
             {
@@ -141,9 +153,14 @@ namespace DeleteMeHeaps
             }
         }
 
+        //public static int CompareTo2(int x, int y)
+        //{
+        //    return x.CompareTo(y);
+        //}
+
         public static T[] HeapSort(T[] array, Comparison<T> comparison)
         {
-            Heaps<T> heap=new Heaps<T>(array, Comparer<T>.Create((a, b) => comparison(b, a)));
+            Heaps<T> heap=new Heaps<T>(Comparer<T>.Create((a, b) => comparison(b, a)));
             
             heap.Heapify();
 

@@ -231,24 +231,19 @@ namespace DeleteMeGraphs
             if (path.Contains(endNode.Value)) return path;
             else return new List<T>();
         }
-        //public int DoSomething(int x, int y)
-        //{
-        //    return -1;
-        //}
 
-
-        public IEnumerable<T> Djikstra(T start, T end)
+        public IEnumerable<Vertex<T>> Djikstra(T start, T end)
         {
             //Comparer<int> comp = Comparer<int>.Create(DoSomething);
             Comparer<Vertex<T>> comparer = Comparer<Vertex<T>>.Create((x, y) => x.cumulDist.CompareTo(y.cumulDist));
             Heaps<Vertex<T>> queue = new Heaps<Vertex<T>>(comparer);
-            List<T> path = new List<T>();
+            
             Vertices.ForEach(vertex => vertex.hasVisited = false);
 
             var startNode = Search(start);
-            if (startNode is null) return path;
+            if (startNode is null) return null;
             var endNode = Search(end);
-            if (endNode is null) return path;
+            if (endNode is null) return null;
             var dic = new Dictionary<Vertex<T>, (Vertex<T> parent, int dist)>();
 
             dic[startNode] = (null, 0); // set distance of startNode to 0
@@ -263,16 +258,7 @@ namespace DeleteMeGraphs
 
                     if (current == endNode)
                     {
-
-                        Vertex<T> temp = endNode;
-                        
-                        while(temp != null)
-                        {
-                            path.Add(temp.Value);
-                            temp = dic[temp].parent;     
-                        }
-                        
-                        //return path;
+                       break;                                               
                     }
                     foreach (var edge in current.Neighbors)
                     {
@@ -283,25 +269,21 @@ namespace DeleteMeGraphs
                             dic[neighbor] = (current, tentativedist);
                             queue.Push(current);
                             //  path.Add(current.Value);
-                        }
-
-                        //for (int i = 0; i < current.Neighbors.Count; i++)
-                        //{
-                        //    if (!current.Neighbors[i].hasVisited)
-                        //    {
-                        //        current.Neighbors[i].hasVisited = true;
-                        //        queue.Push(current.Neighbors[i].End);
-
-                        //    }
-                        //}
-                        //if (current == endNode)
-                        //{
-                        //    return path;
-                        //}
+                        }                     
                     }
                 }
             }
-            return new List<T>();
+            var path = new Stack<Vertex<T>>();
+
+            Vertex<T> temp = endNode;
+
+            while (temp != null)
+            {
+                path.Push(temp);
+                temp = dic[temp].parent;
+            }
+
+            return path;
         }
         public List<T> BFSPath(T start, T end)
         {

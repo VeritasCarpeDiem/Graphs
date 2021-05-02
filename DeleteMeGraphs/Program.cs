@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using DeleteMeHeaps;
 
 
@@ -11,6 +12,7 @@ namespace DeleteMeGraphs
 
         static void Main(string[] args)
         {
+           
             Graph<String> graph = new Graph<String>();
             List<String> path = new List<String>();
             string[] lines = File.ReadAllLines("AirportProblem.txt");
@@ -47,25 +49,18 @@ namespace DeleteMeGraphs
 
             }
 
-            path = graph.BFSShortestPathByHops("LAX","HOU");
+            //path = graph.BFSShortestPathByHops("LAX","HOU");
 
+            //foreach (var item in path)
+            //{
+            //    Console.WriteLine(item);
+            //}          
+
+            var result = graph.Djikstra("STL", "LAX");
             foreach (var item in path)
             {
                 Console.WriteLine(item);
             }
-
-          
-
-            path=graph.Djikstra("STL", "LAX");
-            foreach(var item in path)
-            {
-                Console.WriteLine(item);
-            }
-
-           
-
-
-            ;
         }
        
     }

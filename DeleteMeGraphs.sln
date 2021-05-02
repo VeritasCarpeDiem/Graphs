@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeleteMeGraphs", "DeleteMeGraphs\DeleteMeGraphs.csproj", "{85F6A72B-3E32-4F61-8713-3C02A40E2E0C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackingStructures", "BackingStructures\BackingStructures.csproj", "{47181F40-4EF9-4050-82D9-7FF084A88985}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BackingStructures", "BackingStructures\BackingStructures.csproj", "{47181F40-4EF9-4050-82D9-7FF084A88985}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest", "UnitTest\UnitTest.csproj", "{FA048C56-E205-469F-AA4E-59DCE4750106}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{47181F40-4EF9-4050-82D9-7FF084A88985}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47181F40-4EF9-4050-82D9-7FF084A88985}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{47181F40-4EF9-4050-82D9-7FF084A88985}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA048C56-E205-469F-AA4E-59DCE4750106}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA048C56-E205-469F-AA4E-59DCE4750106}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA048C56-E205-469F-AA4E-59DCE4750106}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA048C56-E205-469F-AA4E-59DCE4750106}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
