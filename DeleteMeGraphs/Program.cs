@@ -2,11 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-<<<<<<< HEAD
 using System.Linq;
 using DeleteMeHeaps;
-=======
->>>>>>> e45aa40f8397e5c486e87396d1ffd11fd72d06ff
+
 
 
 namespace DeleteMeGraphs
@@ -53,7 +51,7 @@ namespace DeleteMeGraphs
 
             }
 
-<<<<<<< HEAD
+
             //path = graph.BFSShortestPathByHops("LAX","HOU");
 
             //foreach (var item in path)
@@ -61,12 +59,12 @@ namespace DeleteMeGraphs
             //    Console.WriteLine(item);
             //}          
 
-            var result = graph.Djikstra("STL", "LAX");
+            var result = graph.Djikstra("STL", "JFK");
             foreach (var item in path)
             {
                 Console.WriteLine(item);
             }
-=======
+
             path = graph.BFSShortestPathByHops("LAX", "HOU");
 
             foreach (var item in path)
@@ -108,7 +106,7 @@ namespace DeleteMeGraphs
             {
                 return GetEnumerator();
             }
->>>>>>> e45aa40f8397e5c486e87396d1ffd11fd72d06ff
+
         }
 
     }

@@ -239,7 +239,10 @@ namespace DeleteMeGraphs
             Comparer<Vertex<T>> comparer = Comparer<Vertex<T>>.Create((x, y) => x.cumulDist.CompareTo(y.cumulDist));
             Heaps<Vertex<T>> queue = new Heaps<Vertex<T>>(comparer);
             
-            Vertices.ForEach(vertex => vertex.hasVisited = false);
+            Vertices.ForEach(vertex => {
+                vertex.hasVisited = false;
+                vertex.cumulDist = int.MaxValue;
+            });
 
             var startNode = Search(start);
             if (startNode is null) return null;
@@ -268,12 +271,13 @@ namespace DeleteMeGraphs
                         if (tentativedist < neighbor.cumulDist && !neighbor.hasVisited)
                         {
                             dic[neighbor] = (current, tentativedist);
-                            queue.Push(current);
+                            queue.Push(neighbor);
                             //  path.Add(current.Value);
                         }                     
                     }
                 }
             }
+            ;
             var path = new Stack<Vertex<T>>();
 
             Vertex<T> temp = endNode;

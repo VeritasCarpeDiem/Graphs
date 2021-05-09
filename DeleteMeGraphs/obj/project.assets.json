@@ -35,19 +35,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
-      "projectUniqueName": "\\\\GMRDC1\\Folder Redirection\\jin.kim\\Documents\\Visual Studio 2019\\Projects\\DeleteMeGraphs\\DeleteMeGraphs\\DeleteMeGraphs.csproj",
-      "projectName": "DeleteMeGraphs",
-      "projectPath": "\\\\GMRDC1\\Folder Redirection\\jin.kim\\Documents\\Visual Studio 2019\\Projects\\DeleteMeGraphs\\DeleteMeGraphs\\DeleteMeGraphs.csproj",
-      "packagesPath": "C:\\Users\\Jin.Kim\\.nuget\\packages\\",
-      "outputPath": "\\\\GMRDC1\\Folder Redirection\\jin.kim\\Documents\\Visual Studio 2019\\Projects\\DeleteMeGraphs\\DeleteMeGraphs\\obj\\",
-=======
       "projectUniqueName": "C:\\Users\\Veritas\\Desktop\\Coding Projects\\repos\\Graphs\\DeleteMeGraphs\\DeleteMeGraphs.csproj",
       "projectName": "DeleteMeGraphs",
       "projectPath": "C:\\Users\\Veritas\\Desktop\\Coding Projects\\repos\\Graphs\\DeleteMeGraphs\\DeleteMeGraphs.csproj",
       "packagesPath": "C:\\Users\\Veritas\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Veritas\\Desktop\\Coding Projects\\repos\\Graphs\\DeleteMeGraphs\\obj\\",
->>>>>>> e45aa40f8397e5c486e87396d1ffd11fd72d06ff
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -71,13 +63,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-<<<<<<< HEAD
-            "\\\\GMRDC1\\Folder Redirection\\jin.kim\\Documents\\Visual Studio 2019\\Projects\\DeleteMeGraphs\\BackingStructures\\BackingStructures.csproj": {
-              "projectPath": "\\\\GMRDC1\\Folder Redirection\\jin.kim\\Documents\\Visual Studio 2019\\Projects\\DeleteMeGraphs\\BackingStructures\\BackingStructures.csproj"
-=======
             "C:\\Users\\Veritas\\Desktop\\Coding Projects\\repos\\Graphs\\BackingStructures\\BackingStructures.csproj": {
               "projectPath": "C:\\Users\\Veritas\\Desktop\\Coding Projects\\repos\\Graphs\\BackingStructures\\BackingStructures.csproj"
->>>>>>> e45aa40f8397e5c486e87396d1ffd11fd72d06ff
             }
           }
         }

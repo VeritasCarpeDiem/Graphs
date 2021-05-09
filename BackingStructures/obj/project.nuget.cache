@@ -1,24 +1,11 @@
 {
   "version": 2,
-<<<<<<< HEAD
-  "dgSpecHash": "DKl44JVLli/+AyzGFBb5LpxVXef9Y517FS14NNgJrhKGZAm36OLJUOU5f+XC83E4ngVG7zsBNQgic0lNd/zYTA==",
-  "success": true,
-  "projectFilePath": "\\\\GMRDC1\\Folder Redirection\\jin.kim\\Documents\\Visual Studio 2019\\Projects\\DeleteMeGraphs\\BackingStructures\\BackingStructures.csproj",
-=======
   "dgSpecHash": "MFj23R15N7aZxwioXmVBKl0Gva7ft6m2rvPsiabQUrTatMDry8xFnQlq+4bJRUb56dPTYHCz5eXZvv4FSpDTaQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Veritas\\Desktop\\Coding Projects\\repos\\Graphs\\BackingStructures\\BackingStructures.csproj",
->>>>>>> e45aa40f8397e5c486e87396d1ffd11fd72d06ff
   "expectedPackageFiles": [
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\Veritas\\Desktop\\Coding Projects\\repos\\Graphs\\BackingStructures\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }
