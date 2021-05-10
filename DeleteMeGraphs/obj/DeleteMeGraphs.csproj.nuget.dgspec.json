@@ -1,23 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "\\\\GMRDC1\\Folder Redirection\\Jin.Kim\\Documents\\Visual Studio 2019\\Projects\\DeleteMeGraphs\\DeleteMeGraphs\\DeleteMeGraphs.csproj": {}
+    "C:\\Users\\Veritas\\Desktop\\Coding Projects\\repos\\Graphs\\DeleteMeGraphs\\DeleteMeGraphs.csproj": {}
   },
   "projects": {
-    "\\\\GMRDC1\\Folder Redirection\\Jin.Kim\\Documents\\Visual Studio 2019\\Projects\\DeleteMeGraphs\\BackingStructures\\BackingStructures.csproj": {
+    "C:\\Users\\Veritas\\Desktop\\Coding Projects\\repos\\Graphs\\BackingStructures\\BackingStructures.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "\\\\GMRDC1\\Folder Redirection\\Jin.Kim\\Documents\\Visual Studio 2019\\Projects\\DeleteMeGraphs\\BackingStructures\\BackingStructures.csproj",
+        "projectUniqueName": "C:\\Users\\Veritas\\Desktop\\Coding Projects\\repos\\Graphs\\BackingStructures\\BackingStructures.csproj",
         "projectName": "BackingStructures",
-        "projectPath": "\\\\GMRDC1\\Folder Redirection\\Jin.Kim\\Documents\\Visual Studio 2019\\Projects\\DeleteMeGraphs\\BackingStructures\\BackingStructures.csproj",
-        "packagesPath": "C:\\Users\\Jin.Kim\\.nuget\\packages\\",
-        "outputPath": "\\\\GMRDC1\\Folder Redirection\\Jin.Kim\\Documents\\Visual Studio 2019\\Projects\\DeleteMeGraphs\\BackingStructures\\obj\\",
+        "projectPath": "C:\\Users\\Veritas\\Desktop\\Coding Projects\\repos\\Graphs\\BackingStructures\\BackingStructures.csproj",
+        "packagesPath": "C:\\Users\\Veritas\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Veritas\\Desktop\\Coding Projects\\repos\\Graphs\\BackingStructures\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Jin.Kim\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Veritas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -61,24 +64,27 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "\\\\GMRDC1\\Folder Redirection\\Jin.Kim\\Documents\\Visual Studio 2019\\Projects\\DeleteMeGraphs\\DeleteMeGraphs\\DeleteMeGraphs.csproj": {
+    "C:\\Users\\Veritas\\Desktop\\Coding Projects\\repos\\Graphs\\DeleteMeGraphs\\DeleteMeGraphs.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "\\\\GMRDC1\\Folder Redirection\\Jin.Kim\\Documents\\Visual Studio 2019\\Projects\\DeleteMeGraphs\\DeleteMeGraphs\\DeleteMeGraphs.csproj",
+        "projectUniqueName": "C:\\Users\\Veritas\\Desktop\\Coding Projects\\repos\\Graphs\\DeleteMeGraphs\\DeleteMeGraphs.csproj",
         "projectName": "DeleteMeGraphs",
-        "projectPath": "\\\\GMRDC1\\Folder Redirection\\Jin.Kim\\Documents\\Visual Studio 2019\\Projects\\DeleteMeGraphs\\DeleteMeGraphs\\DeleteMeGraphs.csproj",
-        "packagesPath": "C:\\Users\\Jin.Kim\\.nuget\\packages\\",
-        "outputPath": "\\\\GMRDC1\\Folder Redirection\\Jin.Kim\\Documents\\Visual Studio 2019\\Projects\\DeleteMeGraphs\\DeleteMeGraphs\\obj\\",
+        "projectPath": "C:\\Users\\Veritas\\Desktop\\Coding Projects\\repos\\Graphs\\DeleteMeGraphs\\DeleteMeGraphs.csproj",
+        "packagesPath": "C:\\Users\\Veritas\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Veritas\\Desktop\\Coding Projects\\repos\\Graphs\\DeleteMeGraphs\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Jin.Kim\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Veritas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -93,8 +99,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "\\\\GMRDC1\\Folder Redirection\\Jin.Kim\\Documents\\Visual Studio 2019\\Projects\\DeleteMeGraphs\\BackingStructures\\BackingStructures.csproj": {
-                "projectPath": "\\\\GMRDC1\\Folder Redirection\\Jin.Kim\\Documents\\Visual Studio 2019\\Projects\\DeleteMeGraphs\\BackingStructures\\BackingStructures.csproj"
+              "C:\\Users\\Veritas\\Desktop\\Coding Projects\\repos\\Graphs\\BackingStructures\\BackingStructures.csproj": {
+                "projectPath": "C:\\Users\\Veritas\\Desktop\\Coding Projects\\repos\\Graphs\\BackingStructures\\BackingStructures.csproj"
               }
             }
           }
@@ -123,7 +129,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

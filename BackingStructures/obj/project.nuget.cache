@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "kXzz6uptxvGWHHfBZ9XtWapp+VuYZb/8RUBG4wFNLXTq7MCRFUZchvJkia+E8L3lv19qt0PuPhSGhGguF3985g==",
+  "dgSpecHash": "MFj23R15N7aZxwioXmVBKl0Gva7ft6m2rvPsiabQUrTatMDry8xFnQlq+4bJRUb56dPTYHCz5eXZvv4FSpDTaQ==",
   "success": true,
-  "projectFilePath": "\\\\GMRDC1\\Folder Redirection\\Jin.Kim\\Documents\\Visual Studio 2019\\Projects\\DeleteMeGraphs\\BackingStructures\\BackingStructures.csproj",
+  "projectFilePath": "C:\\Users\\Veritas\\Desktop\\Coding Projects\\repos\\Graphs\\BackingStructures\\BackingStructures.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Jin.Kim\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Users\\Jin.Kim\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
   ],
   "logs": []
 }

@@ -11,12 +11,8 @@ namespace DeleteMeGraphs
 {
     class Program
     {
-
         static void Main(string[] args)
         {
-           
-            //hacked
-
             Graph<String> graph = new Graph<String>();
             List<String> path = new List<String>();
             string[] lines = File.ReadAllLines("AirportProblem.txt");
@@ -27,7 +23,6 @@ namespace DeleteMeGraphs
             //    graph.AddVertex(lines[i]);
             //    if()
             //    graph.AddEdge();
-
             //}
             int startOfConnects = int.Parse(lines[0]) + 1;
             HashSet<string> airportNames = new HashSet<string>();
@@ -53,14 +48,6 @@ namespace DeleteMeGraphs
 
             }
 
-
-            //path = graph.BFSShortestPathByHops("LAX","HOU");
-
-            //foreach (var item in path)
-            //{
-            //    Console.WriteLine(item);
-            //}          
-
             var result = graph.Djikstra("STL", "JFK");
             foreach (var item in path)
             {
@@ -74,12 +61,6 @@ namespace DeleteMeGraphs
                 Console.WriteLine(item);
             }
 
-            //path = graph.Djikstra("STL", "LAX");
-            //foreach (var item in path)
-            //{
-            //    Console.WriteLine(item);
-            //}
-
             string[] names = new string[] { "Sally", "Jin", "Paul" };
             Foo<string> foo = new Foo<string>(names);
 
@@ -88,6 +69,7 @@ namespace DeleteMeGraphs
                 Console.WriteLine(item);
             }
         }
+
         public class Foo<T> : IEnumerable<T>
         {
             List<T> names;

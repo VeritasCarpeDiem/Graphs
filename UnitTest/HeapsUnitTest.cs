@@ -13,7 +13,6 @@ namespace UnitTest
         {
             Comparer<int> comparer = Comparer<int>.Create((x, y) => x.CompareTo(y));
             Heaps<int> heaps = new Heaps<int>(comparer);
-            //Heaps<int> heaps = new Heaps<int>();
             Assert.Equal(0, heaps.Count);
             Assert.True(heaps.isEmpty);
         }
@@ -23,7 +22,6 @@ namespace UnitTest
         {
             Comparer<int> comparer = Comparer<int>.Create((x, y) => x.CompareTo(y));
             Heaps<int> heaps = new Heaps<int>(comparer);
-            //Heaps<int> heaps = new Heaps<int>();
             heaps.Push(5);
             Assert.Equal(1, heaps.Count);
             Assert.True(heaps.Contains(5));
@@ -38,8 +36,6 @@ namespace UnitTest
         {
             Comparer<int> comparer = Comparer<int>.Create((x, y) => x.CompareTo(y));
             Heaps<int> heaps = new Heaps<int>(comparer);
-            // Heaps<int> heap= new Heaps<int>();
-
             for (int i = 0; i < count; i++)
             {
                 heaps.Push(i);
