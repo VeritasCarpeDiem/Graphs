@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using DeleteMeHeaps;
-
+using System.Text.Json;
 
 
 namespace DeleteMeGraphs
@@ -15,38 +15,52 @@ namespace DeleteMeGraphs
         {
             Graph<String> graph = new Graph<String>();
             List<String> path = new List<String>();
-            string[] lines = File.ReadAllLines("AirportProblem.txt");
+            //string[] lines = File.ReadAllLines("AirportProblem.txt");
 
-            // Read, Parse, and Calculate the distance between LAX and HOU
-            //for (int i = 0; i <7; i++)
+            string connections = File.ReadAllText("AirportProblemEdges.json");
+            string verticies = File.ReadAllText("AirportProblemVerticies.json");
+
+            string[] airportsModels = JsonSerializer.Deserialize<string[]>(verticies);
+            EdgeModel[] connectionModels = JsonSerializer.Deserialize<EdgeModel[]>(connections);
+
+            for (int i = 0; i < connectionModels.Length; i++)
+            {
+                Console.WriteLine(connectionModels[i].ToString());
+            }
+            ;
+            foreach(var airport in airportsModels) //add it to the graph
+            {
+                graph.AddVertex(airport);
+            }
+
+            for (int i = 0; i < connectionModels.Length; i++)
+            {
+                graph.AddEdge(connectionModels[i].Start, connectionModels[i].End, connectionModels[i].Distance);
+            }
+            ;
+            //int startOfConnects = int.Parse(lines[0]) + 1;
+            //HashSet<string> airportNames = new HashSet<string>();
+            //int i;
+            //for (i = 1; i < startOfConnects; i++)
             //{
-            //    graph.AddVertex(lines[i]);
-            //    if()
-            //    graph.AddEdge();
+            //    string[] airports = lines[i].Split(',');
+            //    foreach (var airport in airports)
+            //    {
+            //        airportNames.Add(airport);
+            //    }
             //}
-            int startOfConnects = int.Parse(lines[0]) + 1;
-            HashSet<string> airportNames = new HashSet<string>();
-            int i;
-            for (i = 1; i < startOfConnects; i++)
-            {
-                string[] airports = lines[i].Split(',');
-                foreach (var airport in airports)
-                {
-                    airportNames.Add(airport);
-                }
-            }
 
-            foreach (var item in airportNames)
-            {
-                graph.AddVertex(item);
-            }
-            for (; i < lines.Length; i++)
-            {
-                string[] connection = lines[i].Split(',');
+            //foreach (var item in airportNames)
+            //{
+            //    graph.AddVertex(item);
+            //}
+            //for (; i < lines.Length; i++)
+            //{
+            //    string[] connection = lines[i].Split(',');
 
-                graph.AddEdge(connection[0], connection[1], int.Parse(connection[2]));
+            //    graph.AddEdge(connection[0], connection[1], int.Parse(connection[2]));
 
-            }
+            //}
 
             var result = graph.Djikstra("STL", "JFK");
             foreach (var item in path)
@@ -54,20 +68,22 @@ namespace DeleteMeGraphs
                 Console.WriteLine(item);
             }
 
-            path = graph.BFSShortestPathByHops("LAX", "HOU");
+            //path = graph.BFSShortestPathByHops("LAX", "HOU");
 
-            foreach (var item in path)
-            {
-                Console.WriteLine(item);
-            }
+            //foreach (var item in path)
+            //{
+            //    Console.WriteLine(item);
+            //}
 
-            string[] names = new string[] { "Sally", "Jin", "Paul" };
-            Foo<string> foo = new Foo<string>(names);
+            //string[] names = new string[] { "Sally", "Jin", "Paul" };
+            //Foo<string> foo = new Foo<string>(names);
 
-            foreach (var item in foo)
-            {
-                Console.WriteLine(item);
-            }
+            //foreach (var item in foo)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            
         }
 
         public class Foo<T> : IEnumerable<T>
