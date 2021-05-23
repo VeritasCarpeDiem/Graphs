@@ -9,6 +9,7 @@ namespace DeleteMeGraphs
     [DebuggerDisplay("{" + nameof(GetDebuggerDisplay) + "(),nq}")]
     class Vertex<T> // IEnumerable<Edge<T>>
     {
+        
         public T Value { get;  set; }
 
         public List<Edge<T>> Neighbors {get; set;}

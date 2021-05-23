@@ -2,6 +2,7 @@
 using DeleteMeHeaps;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Text;
 
 namespace DeleteMeGraphs
@@ -9,7 +10,6 @@ namespace DeleteMeGraphs
     class Graph<T>
     {
         public List<Vertex<T>> Vertices { get; set; }
-
 
         public int VertexCount => Vertices.Count;
 
@@ -289,6 +289,65 @@ namespace DeleteMeGraphs
             }
 
             return path;
+        }
+
+        public static IEnumerable<Vertex<Point>> AStar(Graph<Point> graph, Vertex<Point> start, Vertex<Point> end, Heuristics heuristics= Heuristics.Manhattan)
+        {
+            if(!graph.Vertices.Contains(start) && !graph.Vertices.Contains(end))
+            {
+                return null;
+            }
+            Comparer<Vertex<T>> Comparer = Comparer<Vertex<T>>.Create((x, y) => x.cumulDist.CompareTo(y));
+            Heaps<Vertex<T>> PriorityQueue = new Heaps<Vertex<T>>(Comparer);
+            var dic = new Dictionary<Vertex<Point>, (Vertex<Point> founder, int dist, int finaldist)>();
+
+            for (int i = 0; i < graph.Vertices.Count; i++)
+            {
+                graph.Vertices[i].hasVisited = false;
+                dic.Add(graph.Vertices[i], );
+            }
+           
+           // dic[start]=()
+            //PriorityQueue.Push(start);
+            
+            while(PriorityQueue.Count>1)
+            {
+                var current = PriorityQueue.Pop();
+                current.hasVisited = true;
+
+            }
+
+            return null;
+        }
+        public enum Heuristics
+        {
+            Manhattan = 1,
+            Diagonal,
+            Euclidean      
+        }
+        private static float Heuristic(Heuristics heuristics,Point start,Point end , float D=1, float D2= 1 )
+        {
+            float dx = -1;
+            float dy = -1;
+            
+            switch(heuristics)
+            {
+                case Heuristics.Manhattan:
+                    dx = Math.Abs(start.X - end.Y);
+                    dy = Math.Abs(start.Y - end.X);
+                    return D * (dx + dy);
+                case Heuristics.Diagonal:
+                    dx = Math.Abs(start.X - end.Y);
+                    dy = Math.Abs(start.Y - end.X);
+                    return D * (dx + dy) + (D2 - 2 * D) * Math.Min(dx, dy);
+                case Heuristics.Euclidean:
+                    dx = Math.Abs(start.X - end.Y);
+                    dy = Math.Abs(start.Y - end.X);
+                    return (float) (D * (Math.Sqrt((dx * dy) + (dy* dx))));
+                default:
+                    throw new Exception("Enter a valid Heuristic!");
+            }
+           
         }
         public List<T> BFSPath(T start, T end)
         {
