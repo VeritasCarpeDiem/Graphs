@@ -7,7 +7,7 @@ using System.Text;
 namespace DeleteMeGraphs
 {
     [DebuggerDisplay("{" + nameof(GetDebuggerDisplay) + "(),nq}")]
-    class Vertex<T> // IEnumerable<Edge<T>>
+    public class Vertex<T> // IEnumerable<Edge<T>>
     {
         
         public T Value { get;  set; }

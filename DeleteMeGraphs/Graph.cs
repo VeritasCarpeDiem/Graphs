@@ -7,7 +7,7 @@ using System.Text;
 
 namespace DeleteMeGraphs
 {
-    class Graph<T>
+    public class Graph<T>
     {
         public List<Vertex<T>> Vertices { get; set; }
 
@@ -291,40 +291,9 @@ namespace DeleteMeGraphs
             return path;
         }
 
-        public static IEnumerable<Vertex<Point>> AStar(Graph<Point> graph, Vertex<Point> start, Vertex<Point> end, Heuristics heuristics= Heuristics.Manhattan)
-        {
-            if(!graph.Vertices.Contains(start) && !graph.Vertices.Contains(end))
-            {
-                return null;
-            }
-            Comparer<Vertex<T>> Comparer = Comparer<Vertex<T>>.Create((x, y) => x.cumulDist.CompareTo(y));
-            Heaps<Vertex<T>> PriorityQueue = new Heaps<Vertex<T>>(Comparer);
-            var dic = new Dictionary<Vertex<Point>, (Vertex<Point> founder, int dist, int finaldist)>();
-
-            for (int i = 0; i < graph.Vertices.Count; i++)
-            {
-                graph.Vertices[i].hasVisited = false;
-                dic.Add(graph.Vertices[i], );
-            }
-           
-           // dic[start]=()
-            //PriorityQueue.Push(start);
-            
-            while(PriorityQueue.Count>1)
-            {
-                var current = PriorityQueue.Pop();
-                current.hasVisited = true;
-
-            }
-
-            return null;
-        }
-        public enum Heuristics
-        {
-            Manhattan = 1,
-            Diagonal,
-            Euclidean      
-        }
+         //overloaded function
+        
+       
         private static float Heuristic(Heuristics heuristics,Point start,Point end , float D=1, float D2= 1 )
         {
             float dx = -1;

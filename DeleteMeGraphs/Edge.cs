@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DeleteMeGraphs
 {
-    class Edge<T>
+    public class Edge<T>
     {
         public Vertex<T> Start { get; set; }
         public Vertex<T> End { get; set; }

@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using DeleteMeHeaps;
 using System.Text.Json;
-
+using System.Drawing;
 
 namespace DeleteMeGraphs
 {
@@ -62,11 +62,11 @@ namespace DeleteMeGraphs
 
             //}
 
-            var result = graph.Djikstra("STL", "JFK");
-            foreach (var item in path)
-            {
-                Console.WriteLine(item);
-            }
+            //var result = graph.Djikstra("STL", "JFK");
+            //foreach (var item in path)
+            //{
+            //    Console.WriteLine(item);
+            //}
 
             //path = graph.BFSShortestPathByHops("LAX", "HOU");
 
@@ -83,7 +83,15 @@ namespace DeleteMeGraphs
             //    Console.WriteLine(item);
             //}
 
-            
+            Graph<Point> graph1;
+
+            graph1.AStar();
+
+            var path = graph.AStar("STL", "JFK");
+            foreach(var airport in path)
+            {
+                Console.WriteLine(airport);
+            }
         }
 
         public class Foo<T> : IEnumerable<T>
