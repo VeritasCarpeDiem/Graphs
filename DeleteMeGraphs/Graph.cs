@@ -291,33 +291,30 @@ namespace DeleteMeGraphs
             return path;
         }
 
-         //overloaded function
-        
-       
-        private static float Heuristic(Heuristics heuristics,Point start,Point end , float D=1, float D2= 1 )
-        {
-            float dx = -1;
-            float dy = -1;
+        //private static float Heuristic(Heuristics heuristics,Point start,Point end , float D=1, float D2= 1 )
+        //{
+        //    float dx = -1;
+        //    float dy = -1;
             
-            switch(heuristics)
-            {
-                case Heuristics.Manhattan:
-                    dx = Math.Abs(start.X - end.Y);
-                    dy = Math.Abs(start.Y - end.X);
-                    return D * (dx + dy);
-                case Heuristics.Diagonal:
-                    dx = Math.Abs(start.X - end.Y);
-                    dy = Math.Abs(start.Y - end.X);
-                    return D * (dx + dy) + (D2 - 2 * D) * Math.Min(dx, dy);
-                case Heuristics.Euclidean:
-                    dx = Math.Abs(start.X - end.Y);
-                    dy = Math.Abs(start.Y - end.X);
-                    return (float) (D * (Math.Sqrt((dx * dy) + (dy* dx))));
-                default:
-                    throw new Exception("Enter a valid Heuristic!");
-            }
+        //    switch(heuristics)
+        //    {
+        //        case Heuristics.Manhattan:
+        //            dx = Math.Abs(start.X - end.Y);
+        //            dy = Math.Abs(start.Y - end.X);
+        //            return D * (dx + dy);
+        //        case Heuristics.Diagonal:
+        //            dx = Math.Abs(start.X - end.Y);
+        //            dy = Math.Abs(start.Y - end.X);
+        //            return D * (dx + dy) + (D2 - 2 * D) * Math.Min(dx, dy);
+        //        case Heuristics.Euclidean:
+        //            dx = Math.Abs(start.X - end.Y);
+        //            dy = Math.Abs(start.Y - end.X);
+        //            return (float) (D * (Math.Sqrt((dx * dy) + (dy* dx))));
+        //        default:
+        //            throw new Exception("Enter a valid Heuristic!");
+        //    }
            
-        }
+        //}
         public List<T> BFSPath(T start, T end)
         {
             //bool[] cycle = new bool[Vertices.Count];

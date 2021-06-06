@@ -28,7 +28,7 @@ namespace DeleteMeGraphs
                 Console.WriteLine(connectionModels[i].ToString());
             }
             ;
-            foreach(var airport in airportsModels) //add it to the graph
+            foreach (var airport in airportsModels) //add it to the graph
             {
                 graph.AddVertex(airport);
             }
@@ -37,6 +37,21 @@ namespace DeleteMeGraphs
             {
                 graph.AddEdge(connectionModels[i].Start, connectionModels[i].End, connectionModels[i].Distance);
             }
+
+
+            Graph<Point> AStargraph = new Graph<Point>();
+            int D = 10;
+            int D2 = 20;
+
+            //int Diagonal(Vertex<Point> start, Vertex<Point> end)
+            //{
+            //    int dx = Math.Abs(start.Value.X - end.Value.X);
+            //    int dy = Math.Abs(start.Value.Y - end.Value.Y);
+            //    return D * (dx + dy) + (D2 - 2 * D) * Math.Min(dx, dy);
+            //};
+
+
+            AStar.AStarPathFinding(AStargraph, null, null, Diagonal);
             ;
             //int startOfConnects = int.Parse(lines[0]) + 1;
             //HashSet<string> airportNames = new HashSet<string>();
@@ -83,15 +98,6 @@ namespace DeleteMeGraphs
             //    Console.WriteLine(item);
             //}
 
-            Graph<Point> graph1;
-
-            graph1.AStar();
-
-            var path = graph.AStar("STL", "JFK");
-            foreach(var airport in path)
-            {
-                Console.WriteLine(airport);
-            }
         }
 
         public class Foo<T> : IEnumerable<T>

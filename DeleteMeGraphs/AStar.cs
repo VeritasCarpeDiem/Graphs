@@ -7,10 +7,29 @@ using System.Text;
 
 namespace DeleteMeGraphs
 {
-    public static class Pathfinding
+    public static class AStar
     {
-        public static IEnumerable<Vertex<Point>> AStar(this Graph<Point> graph, Vertex<Point> start, Vertex<Point> end, Heuristic heuristic)
+        public static int DoSomething(Func<string, int> func)
         {
+            return func("hello");
+        }
+
+        public static int DoSomething2()
+        {
+            return DoSomething(getLength);
+        }
+
+        public static int getLength(string str)
+        {
+            return str.Length;
+        }
+
+
+
+        public static IEnumerable<Vertex<Point>> AStarPathFinding(this Graph<Point> graph, Vertex<Point> start, Vertex<Point> end, Func<Vertex<Point>,Vertex<Point>, int> heuristic)
+        {
+
+            
             if (!graph.Vertices.Contains(start) && !graph.Vertices.Contains(end))
             {
                 return null;
@@ -41,9 +60,11 @@ namespace DeleteMeGraphs
                         var neighbor = edge.End;
                         int tentativeDist = edge.Dist + dic[current].dist;
 
+
+
                         if (tentativeDist < neighbor.cumulDist && !neighbor.hasVisited)
                         {
-                            dic[neighbor] = (current, tentativeDist, (int)Heuristic(heuristics, current.Value, neighbor.Value));
+                            dic[neighbor] = (current, tentativeDist, tentativeDist + heuristic(edge.End, end));
                             PriorityQueue.Push(neighbor);
                             //  path.Add(current.Value);
                         }
